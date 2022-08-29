@@ -1,12 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="http://downloads.dtapps.co.uk/fontawesome/package/css/all.css" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap.min.css"
+          integrity="sha512-Ez0cGzNzHR1tYAv56860NLspgUGuQw16GiOOp/I2LuTmpSK9xDXlgJz3XN4cnpXWDmkNBKXR/VDMTCnAaEooxA=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+          href="https://anthonykuske.com/fontawesome/fortawesome-fontawesome-pro-6.1.1/package/css/all.css" />
+    <style>
+    body {
+        padding: 24px;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 1000px;
+    }
+
+    td,
+    th {
+        vertical-align: middle;
+    }
+
+    pre {
+        margin: 0;
+    }
+
+    i {
+        font-size: 48px;
+        margin: 10px;
+    }
+
+    #icons-table td:last-child {
+        width: 150px;
+        text-align: center;
+    }
+    </style>
 </head>
 <body>
 
-	<p>Hello world.</p>
-	<p><i class="fas fa-dice-three" /></p>
+<div class="container">
+    <table id="icons-table"
+           class="table table-striped">
+        <thead>
+        <tr>
+            <th>Use</th>
+            <th>Icon Name</th>
+            <th>Example</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.slim.min.js"
+        integrity="sha512-yBpuflZmP5lwMzZ03hiCLzA94N0K2vgBtJgqQ2E1meJzmIBfjbb7k4Y23k2i2c/rIeSUGc7jojyIY5waK3ZxCQ=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
+<script>
+
+const icons = [
+    ['Address', 'fa-regular fa-house'],
+    ['Booking Ref / Membership Ref / Account Ref', 'fa-regular fa-barcode'],
+    ['Branch', 'fa-regular fa-shop'],
+    ['Customer', 'fa-solid fa-user'],
+    ['Device', 'fa-regular fa-cash-register'],
+    ['Email', 'fa-regular fa-envelope'],
+    ['Expiry Date', 'fa-regular fa-hourglass'],
+    ['Gift Voucher', 'fa-regular fa-gift'],
+    ['Hold / Stash', 'fa-solid fa-cloud-arrow-up'],
+    ['Kitchen', 'fa-solid fa-burger-soda'],
+    ['Membership Plan', 'fa-regular fa-ballot'],
+    ['Membership', 'fa-regular fa-users'],
+    ['Notes', 'fa-regular fa-note-sticky'],
+    ['Organisaion (from a customer account}', 'fa-regular fa-building'],
+    ['Product (Food)', 'fa-regular fa-burger-cheese'],
+    ['Product', 'fa-regular fa-box-taped'],
+    ['Restore / Unstash', 'fa-solid fa-cloud-arrow-down'],
+    ['Ticket', 'fa-regular fa-ticket-simple'],
+];
+
+$(() => {
+    const $tableBody = $('#icons-table tbody');
+
+    icons.forEach((icon) => {
+        $tableBody.append(`
+        <tr>
+            <td>${icon[0]}</td>
+            <td><pre>${icon[1]}</pre></td>
+            <td><i class="${icon[1]}" /></td>
+        </tr>
+        `);
+    });
+});
+
+</script>
 
 </body>
 </html>
